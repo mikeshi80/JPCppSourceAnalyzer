@@ -3,7 +3,7 @@ JP CPP Source Analyzer
 
 This is the small utility for extracting the line number where contains Japanese charactors from the C/C++ source code, and it will ignore the Japanese charactors in the comments. It can output the results in the output.txt file.
 
-### Motivition
+### Motivation
 I created this tool for internationalizing a legacy source code, we need find where the Japanese charactors is and use i18n function to replace them.
 
 ### Usage
