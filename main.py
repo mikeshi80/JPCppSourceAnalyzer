@@ -27,7 +27,8 @@ def output(data):
             continue
 
         lines = []
-        lines.append(u'########## %s ##########' % k)
+        
+        lines.append(u'########## %s ##########' % k.decode(sys.getfilesystemencoding()))
 
         for ln in data[k]:
             lines.append('%d, \t%s' % (ln, data[k][ln]))
