@@ -22,7 +22,9 @@ def output(data):
     f = codecs.open('output.txt', 'w', 'utf-8')
 
 
-    for k in data:
+    dkeys = data.keys()
+    dkeys.sort()
+    for k in dkeys:
         if len(data[k]) == 0:
             continue
 
@@ -30,10 +32,13 @@ def output(data):
         
         lines.append(u'########## %s ##########' % k.decode(sys.getfilesystemencoding()))
 
-        for ln in data[k]:
-            lines.append('%d, \t%s' % (ln, data[k][ln]))
+        vkeys = data[k].keys()
+        vkeys.sort()
+        for ln in vkeys:
+            lines.append('%d, \t%s' % (ln, data[k][ln].rstrip('\r\n')))
 
         f.writelines('\r\n'.join(lines))
+        f.writelines('\r\n')
 
     f.close()
 
